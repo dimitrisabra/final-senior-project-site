@@ -1,0 +1,5 @@
+{
+  "name": "Smart Cafeteria",
+  "description": "A comprehensive university cafeteria platform featuring personalized meal planning, real-time nutrition tracking, order history, and a built-in AI assistant, powered by a full-stack SQL architecture.",
+  "requestFramePermissions": []
+}
