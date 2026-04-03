@@ -581,8 +581,16 @@ async function startServer() {
   const app = express();
   const PORT = parsePort(process.env.PORT, 3000);
   const HMR_PORT = parsePort(process.env.HMR_PORT, 24678);
+  const assetDirectories = ["meals", "beverage", "dessert", "snacks"];
 
   app.use(express.json());
+
+  for (const assetDirectory of assetDirectories) {
+    app.use(
+      `/${assetDirectory}`,
+      express.static(path.join(process.cwd(), assetDirectory))
+    );
+  }
 
   app.get("/api/health", (_req, res) => {
     res.json({ status: "ok" });
